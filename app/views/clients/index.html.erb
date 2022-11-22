@@ -1,14 +1,62 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Clients</h1>
 
-<div id="clients">
-  <% @clients.each do |client| %>
-    <%= render client %>
-    <p>
-      <%= link_to "Show this client", client %>
-    </p>
-  <% end %>
+
+<div class="row" id="clients">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header">
+        <div class="tools float-right">
+          <%= link_to "Nuevo cliente", new_client_path, class: 'btn btn-info' %>
+        </div>
+        <h1 class="card-title">Clientes</h1>
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table">
+            <thead class="text-primary">
+              <tr>
+                <th>
+                  #
+                </th>
+                <th>
+                  Name
+                </th>
+                <th>
+                  Age
+                </th>
+                <th>
+                  Birthday
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @clients.each do |client| %>
+                <tr>
+                  <td>
+                    <%= client.id %>
+                  </td>
+                  <td>
+                    <%= client.name %>
+                  </td>
+                  <td>
+                    <%= client.address %>
+                  </td>
+                  <td class="text-right">
+
+                    <button type="button" rel="tooltip" class="btn btn-success btn-link btn-sm btn-icon " data-original-title="Refresh" title="">
+                      <i class="tim-icons icon-refresh-01"></i>
+                    </button>
+                    <button type="button" rel="tooltip" class="btn btn-danger btn-link btn-sm " data-original-title="Delete" title="">
+                      <i class="tim-icons icon-simple-remove"></i>
+                    </button>
+                  </td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-
-<%= link_to "New client", new_client_path %>
