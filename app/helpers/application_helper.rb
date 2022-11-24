@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module ApplicationHelper
   def app_name
     'Clinica Unga'
@@ -8,11 +10,11 @@ module ApplicationHelper
   end
 
   def delete_resource_icon(resource, size: 'btn-sm')
-    render 'layouts/confirm_resource_delete_modal', resource: resource, size: size
+    render 'layouts/confirm_resource_delete_modal', resource:, size:
   end
 
   def link_to_icon(text, path, clazz, icon, target = '_self')
-    link_to(path, class: clazz, target: target) do
+    link_to(path, class: clazz, target:) do
       content_tag(:i, '', class: icon).html_safe + (" #{text}" if text.present?)
     end
   end
@@ -24,7 +26,7 @@ module ApplicationHelper
   end
 
   def menu_item_html(path:, icon:, menu_active_path:, text:)
-    content_tag(:li, class: "#{menu_active?(*menu_active_path)}") do
+    content_tag(:li, class: menu_active?(*menu_active_path).to_s) do
       link_to(path) do
         content_tag(:i, '', class: icon).html_safe + content_tag(:p, text)
       end
@@ -53,5 +55,4 @@ module ApplicationHelper
   def alert_delay(level)
     { notice: 5000, success: 5000, error: 0, alert: 0 }[level.to_sym]
   end
-
 end
