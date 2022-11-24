@@ -1,0 +1,27 @@
+<%= link_to_icon_modal('', 'btn btn-danger ' + size, 'far fa-trash-alt', "#delete-resource-modal-#{resource.class.name.underscore}-#{resource.id}") %>
+<div class="modal fade" id="delete-resource-modal-<%= resource.class.name.underscore %>-<%= resource.id %>" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">
+          ¿Estás seguro que deseas eliminar
+          <%= t("activerecord.models.#{resource.class.to_s.underscore}.article").downcase %>
+          <%= t("activerecord.models.#{resource.class.to_s.underscore}.one") %>?
+          (Esta acción no podrá deshacerse)
+        </h5>
+      </div>
+        <div class="modal-body">
+          <p class="text-left">
+            <b><%= resource.to_s %></b>
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+          <%= link_to(resource, class: 'btn btn-danger', method: :delete) do %>
+            <%= content_tag(:i, '', class: 'far fa-trash-alt') %>
+            Si, Eliminar
+          <% end %>
+        </div>
+    </div>
+  </div>
+</div>

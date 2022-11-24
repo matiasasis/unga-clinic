@@ -1,7 +1,5 @@
 <p style="color: green"><%= notice %></p>
 
-
-
 <div class="row" id="clients">
   <div class="col-md-12">
     <div class="card">
@@ -17,16 +15,13 @@
             <thead class="text-primary">
               <tr>
                 <th>
-                  #
-                </th>
-                <th>
                   Name
                 </th>
                 <th>
                   Age
                 </th>
                 <th>
-                  Birthday
+                  Address
                 </th>
               </tr>
             </thead>
@@ -34,22 +29,17 @@
               <% @clients.each do |client| %>
                 <tr>
                   <td>
-                    <%= client.id %>
+                    <%= client.name %>
                   </td>
                   <td>
-                    <%= client.name %>
+                    <%= client.age %>
                   </td>
                   <td>
                     <%= client.address %>
                   </td>
                   <td class="text-right">
-
-                    <button type="button" rel="tooltip" class="btn btn-success btn-link btn-sm btn-icon " data-original-title="Refresh" title="">
-                      <i class="tim-icons icon-refresh-01"></i>
-                    </button>
-                    <button type="button" rel="tooltip" class="btn btn-danger btn-link btn-sm " data-original-title="Delete" title="">
-                      <i class="tim-icons icon-simple-remove"></i>
-                    </button>
+                    <%= link_to_icon 'Editar', edit_client_path(client), 'btn btn-sm btn-warning', 'far fa-edit' %>
+                    <%= delete_resource_icon client %>
                   </td>
                 </tr>
               <% end %>
