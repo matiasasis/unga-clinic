@@ -10,7 +10,8 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require 'nucleo-icons'
- *= require 'black-dashboard.min'
+ *= require 'vendor/nucleo-icons'
+ *= require 'vendor/black-dashboard.min'
+ *= require 'custom'
  *= require_self
  */

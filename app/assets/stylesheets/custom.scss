@@ -1,0 +1,9 @@
+.alert-success,.alert-danger {
+  z-index: 9999 !important;
+}
+
+.field_with_errors {
+  input {
+    margin-bottom: 20px;
+  }
+}

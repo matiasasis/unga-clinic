@@ -1,0 +1,30 @@
+<% flash.each do |key, value| %>
+  <script>
+    $.notify({
+      // options
+      icon: "tim-icons <%= alert_icon(key) %>",
+      message: "<b><%= alert_title(key) %></b><br /> <%= value %>",
+      class: "alert-with-icon"
+    }, {
+      // settings
+      icon_type: 'class',
+      type: "<%= flash_class(key) %>",
+      delay: '<%= alert_delay(key) %>'
+    });
+  </script>
+<% end %>
+<% if defined?(f) && f.error_notification.present? %>
+  <script>
+    $.notify({
+      // options
+      icon: 'pe-7s-close-circle',
+      message: "<b>Errors</b><br /> <%= f.error_notification %>",
+      class: "alert-with-icon"
+    }, {
+      // settings
+      icon_type: 'class',
+      type: 'danger',
+      delay: 0
+    });
+  </script>
+<% end %>

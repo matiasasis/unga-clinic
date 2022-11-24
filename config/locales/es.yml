@@ -2,27 +2,8 @@
 es:
   activerecord:
     attributes:
-      name: Nombre
-      student:
-        name: Nombre
-      event:
-        name: nombre
-        description: Descripción
-        datetime: Fecha y hora
-        observations: Observaciones
-      course_type:
-        name: Nombre
-        image: URL de la imágen del curso
-        agenda: Temario
-        observations: Observaciones
-        recipes_file: Recetario
-      course:
-        course_type: Tipo de Curso
-        datetime: Fecha y Hora
-        price: Precio
-        agenda: Temario
-        observations: Observaciones
-        recipes_file: Recetario
+      client:
+        age: Edad
     models:
       client:
         article: El
