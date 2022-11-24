@@ -18,6 +18,8 @@ group :development, :test do
 end
 
 group :development do
+  gem 'rubocop'
+  gem 'rubocop-rails'
   gem "web-console"
   gem "awesome_print"
 end
