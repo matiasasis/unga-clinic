@@ -17,7 +17,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-          <%= link_to(resource, class: 'btn btn-danger', method: :delete) do %>
+          <%= button_to(resource, class: 'btn btn-danger', method: :delete) do %>
             <%= content_tag(:i, '', class: 'far fa-trash-alt') %>
             Si, Eliminar
           <% end %>
