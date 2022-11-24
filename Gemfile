@@ -16,7 +16,6 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'will_paginate', '~> 3.3'
 gem 'devise'
 
-
 group :development, :test do
   gem 'debug', platforms: %i[mri mingw x64_mingw]
 end
