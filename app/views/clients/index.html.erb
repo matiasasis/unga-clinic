@@ -44,6 +44,7 @@
             </tbody>
           </table>
         </div>
+        <%= will_paginate @clients, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer %>
       </div>
     </div>
   </div>
