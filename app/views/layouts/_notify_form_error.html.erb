@@ -1,0 +1,13 @@
+<% errors.each do |error| %>
+  <script>
+    $.notify({
+      icon: "tim-icons icon-simple-remove",
+      message: "<b>Algo ha salido mal!</b><br /> <%= t("activerecord.attributes.#{model}.#{error.attribute}") %> <%= t("errors.messages.#{error.type}", **error.options) %>",
+      class: "alert-with-icon"
+    }, {
+      icon_type: 'class',
+      type: "danger",
+      delay: '0'
+    });
+  </script>
+<% end %>

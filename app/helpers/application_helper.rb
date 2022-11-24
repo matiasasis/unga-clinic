@@ -1,6 +1,10 @@
 module ApplicationHelper
   def app_name
-    'Unga - Clinica'
+    'Clinica Unga'
+  end
+
+  def app_initials
+    'CU'
   end
 
   def delete_resource_icon(resource, size: 'btn-sm')
@@ -18,4 +22,36 @@ module ApplicationHelper
       content_tag(:i, '', class: icon).html_safe + (" #{text}" if text.present?)
     end
   end
+
+  def menu_item_html(path:, icon:, menu_active_path:, text:)
+    content_tag(:li, class: "#{menu_active?(*menu_active_path)}") do
+      link_to(path) do
+        content_tag(:i, '', class: icon).html_safe + content_tag(:p, text)
+      end
+    end
+  end
+
+  def menu_active?(*patterns)
+    'active' if patterns.any? { |p| request.path.start_with?(p) }
+  end
+
+  def alert_title(level)
+    { notice: 'Buen Trabajo!', success: 'Buen Trabajo!', error: 'Algo ha salido mal!', alert: 'Oops!' }[level.to_sym]
+  end
+
+  def alert_icon(level)
+    { notice: 'icon-check-2',
+      success: 'icon-check-2',
+      error: 'icon-simple-remove',
+      alert: 'icon-simple-remove' }[level.to_sym]
+  end
+
+  def flash_class(level)
+    { notice: 'success', success: 'success', error: 'danger', alert: 'danger' }[level.to_sym]
+  end
+
+  def alert_delay(level)
+    { notice: 5000, success: 5000, error: 0, alert: 0 }[level.to_sym]
+  end
+
 end
