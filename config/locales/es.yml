@@ -4,11 +4,17 @@ es:
     attributes:
       client:
         age: Edad
+      car:
+        year: Anio
     models:
       client:
         article: El
         one: Cliente
         other: Clientes
+      car:
+        article: El
+        one: Auto
+        other: Autos
     errors:
       messages:
         record_invalid: "La validación falló: %{errors}"
