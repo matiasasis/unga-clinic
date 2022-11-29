@@ -1,0 +1,44 @@
+<div class="row" id="users">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header">
+        <div class="tools float-right">
+          <%= link_to "Nuevo Usuario", new_user_path, class: 'btn btn-info' %>
+        </div>
+        <h1 class="card-title">Users</h1>
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table">
+            <thead class="text-primary">
+            <tr>
+              <th>First name</th>
+              <th>Last name</th>
+              <th>Email</th>
+              <th>Phone</th>
+              <th>Birthday</th>
+              <th></th>
+            </tr>
+            </thead>
+            <tbody>
+              <% @users.each do |user| %>
+                <tr>
+                  <td><%= user.first_name %></td>
+                  <td><%= user.last_name %></td>
+                  <td><%= user.email %></td>
+                  <td><%= user.phone %></td>
+                  <td><%= user.birthday %></td>
+                  <td class="text-right">
+                    <%= link_to_icon '', edit_user_path(user), 'btn btn-sm btn-warning', 'far fa-edit' %>
+                    <%= delete_resource_icon user %>
+                  </td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+        <%= will_paginate @users, renderer: WillPaginate::ActionView::Bootstrap4LinkRenderer %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+<%%= form_with(model: <%= model_resource_name %>) do |form| %>
+  <%%= render 'layouts/notify_form_error', model: :<%= model_resource_name %>, errors: <%= model_resource_name %>.errors %>
+
+<% attributes.each do |attribute| -%>
+  <div>
+<% if attribute.password_digest? -%>
+    <%%= form.label :password, style: "display: block" %>
+    <%%= form.password_field :password, class: 'form-control' %>
+  </div>
+
+  <div>
+    <%%= form.label :password_confirmation, style: "display: block" %>
+    <%%= form.password_field :password_confirmation, class: 'form-control' %>
+<% elsif attribute.attachments? -%>
+    <%%= form.label :<%= attribute.column_name %>, style: "display: block" %>
+    <%%= form.<%= attribute.field_type %> :<%= attribute.column_name %>, multiple: true, class: 'form-control' %>
+<% else -%>
+    <%%= form.label :<%= attribute.column_name %>, style: "display: block" %>
+    <%%= form.<%= attribute.field_type %> :<%= attribute.column_name %>, class: 'form-control' %>
+<% end -%>
+  </div>
+
+<% end -%>
+  <div>
+    <%%= form.submit 'Aceptar', class: 'btn btn-fill btn-success animation-on-hover mr-2' %>
+    <%%= link_to 'Volver', <%= plural_table_name %>_url, class: 'btn btn-simple text-white' %>
+  </div>
+<%% end %>

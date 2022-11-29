@@ -55,4 +55,8 @@ module ApplicationHelper
   def alert_delay(level)
     { notice: 5000, success: 5000, error: 0, alert: 0 }[level.to_sym]
   end
+
+  def resource_human_name(resource_name)
+    I18n.t("activerecord.models.#{resource_name.to_s.underscore}.one")
+  end
 end

@@ -4,11 +4,29 @@ es:
     attributes:
       client:
         age: Edad
+      car:
+        year: Anio
+      user:
+        first_name: Nombre
+        last_name: Apellido
+        phone: Apellido
+        birthday: Fecha de nacimiento
+        password: Contraseña
+      test:
+        name: Nombre
     models:
       client:
         article: El
         one: Cliente
         other: Clientes
+      car:
+        article: El
+        one: Auto
+        other: Autos
+      test:
+        article: El
+        one: Test
+        other: Tests
     errors:
       messages:
         record_invalid: "La validación falló: %{errors}"

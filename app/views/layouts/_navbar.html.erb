@@ -15,7 +15,7 @@
           <span class="navbar-toggler-bar bar3"></span>
         </button>
       </div>
-      <a class="navbar-brand" href="javascript:void(0)"><%= app_name %></a>
+      <a class="navbar-brand" href="javascript:void(0)"><%= app_name %> (<%= current_user.to_s %>)</a>
     </div>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-bar navbar-kebab"></span>
@@ -35,15 +35,9 @@
             </p>
           </a>
           <ul class="dropdown-menu dropdown-navbar">
+            <!-- <li class="dropdown-divider"></li> -->
             <li class="nav-link">
-              <a href="javascript:void(0)" class="nav-item dropdown-item">Profile</a>
-            </li>
-            <li class="nav-link">
-              <a href="javascript:void(0)" class="nav-item dropdown-item">Settings</a>
-            </li>
-            <li class="dropdown-divider"></li>
-            <li class="nav-link">
-              <a href="javascript:void(0)" class="nav-item dropdown-item">Log out</a>
+              <%= button_to('Salir', destroy_user_session_path, method: :delete, class: 'nav-item dropdown-item') %>
             </li>
           </ul>
         </li>

@@ -1,0 +1,38 @@
+<div class="row" id="<%= plural_table_name %>">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header">
+        <div class="tools float-right">
+          <%%= link_to "Nuevo #{t("activerecord.models.<%= singular_table_name %>.one")}", <%= new_helper(type: :path) %>, class: 'btn btn-info' %>
+        </div>
+        <h1 class="card-title"><%= human_name.pluralize %></h1>
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table">
+            <thead class="text-primary">
+            <tr>
+              <% attributes.reject(&:password_digest?).each do |attribute| -%>
+<th><%%= t("activerecord.attributes.<%= singular_table_name %>.<%= attribute.name %>") %></th>
+              <% end %><th></th>
+            </tr>
+            </thead>
+            <tbody>
+              <%% @<%= plural_table_name %>.each do |<%= singular_table_name %>| %>
+                <tr>
+                  <% attributes.reject(&:password_digest?).each do |attribute| -%>
+<td><%%= <%= singular_table_name %>.<%= attribute.column_name %> %></td>
+                  <% end %><td class="text-right">
+                    <%%= link_to_icon '', edit_<%= singular_table_name %>_path(<%= singular_table_name %>), 'btn btn-sm btn-warning', 'far fa-edit' %>
+                    <%%= delete_resource_icon <%= singular_table_name %> %>
+                  </td>
+                </tr>
+              <%% end %>
+            </tbody>
+          </table>
+        </div>
+        <%%= will_paginate @<%= plural_table_name %>, renderer: WillPaginate::ActionView::Bootstrap4LinkRenderer %>
+      </div>
+    </div>
+  </div>
+</div>
