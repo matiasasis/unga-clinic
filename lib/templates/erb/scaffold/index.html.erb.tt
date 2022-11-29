@@ -5,7 +5,7 @@
         <div class="tools float-right">
           <%%= link_to "Nuevo #{t("activerecord.models.<%= singular_table_name %>.one")}", <%= new_helper(type: :path) %>, class: 'btn btn-info' %>
         </div>
-        <h1 class="card-title"><%= human_name.pluralize %></h1>
+        <h1 class="card-title"><%%= t("activerecord.models.<%= singular_table_name %>.multiple") %></h1>
       </div>
       <div class="card-body">
         <div class="table-responsive">

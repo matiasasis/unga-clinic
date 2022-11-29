@@ -8,11 +8,25 @@ es:
         phone: Celular
         birthday: Fecha de nacimiento
         password: Contraseña
+      professional:
+        first_name: Nombre
+        last_name: Apellido
+        phone: Celular
+      treatment_type:
+        name: Nombre
     models:
       user:
         article: El
         one: Usuario
         multiple: Usuarios
+      professional:
+        article: El
+        one: Profesional
+        multiple: Profesionales
+      treatment_type:
+        article: El
+        one: Tipo de Tratamiento
+        multiple: Tipos de Tratamiento
     errors:
       messages:
         record_invalid: "La validación falló: %{errors}"

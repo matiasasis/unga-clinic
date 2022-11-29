@@ -1,0 +1,36 @@
+<div class="row" id="treatment_types">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header">
+        <div class="tools float-right">
+          <%= link_to "Nuevo #{t("activerecord.models.treatment_type.one")}", new_treatment_type_path, class: 'btn btn-info' %>
+        </div>
+        <h1 class="card-title"><%= t("activerecord.models.treatment_type.multiple") %></h1>
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table">
+            <thead class="text-primary">
+            <tr>
+              <th><%= t("activerecord.attributes.treatment_type.name") %></th>
+              <th></th>
+            </tr>
+            </thead>
+            <tbody>
+              <% @treatment_types.each do |treatment_type| %>
+                <tr>
+                  <td><%= treatment_type.name %></td>
+                  <td class="text-right">
+                    <%= link_to_icon '', edit_treatment_type_path(treatment_type), 'btn btn-sm btn-warning', 'far fa-edit' %>
+                    <%= delete_resource_icon treatment_type %>
+                  </td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+        <%= will_paginate @treatment_types, renderer: WillPaginate::ActionView::Bootstrap4LinkRenderer %>
+      </div>
+    </div>
+  </div>
+</div>
