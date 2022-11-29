@@ -12,6 +12,8 @@ es:
         phone: Apellido
         birthday: Fecha de nacimiento
         password: Contraseña
+      test:
+        name: Nombre
     models:
       client:
         article: El
