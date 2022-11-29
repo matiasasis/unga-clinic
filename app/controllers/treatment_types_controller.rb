@@ -1,15 +1,12 @@
 # frozen_string_literal: true
 
-class TreatmentTypesController < ApplicationController
-  before_action :set_treatment_type, only: %i[show edit update destroy]
+class TreatmentTypesController < BackofficeController
+  before_action :set_treatment_type, only: %i[edit update destroy]
 
   # GET /treatment_types
   def index
     @treatment_types = TreatmentType.paginate(page: params[:page], per_page: 12)
   end
-
-  # GET /treatment_types/1
-  def show; end
 
   # GET /treatment_types/new
   def new

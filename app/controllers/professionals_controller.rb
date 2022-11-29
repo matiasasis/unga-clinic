@@ -1,15 +1,12 @@
 # frozen_string_literal: true
 
-class ProfessionalsController < ApplicationController
-  before_action :set_professional, only: %i[show edit update destroy]
+class ProfessionalsController < BackofficeController
+  before_action :set_professional, only: %i[edit update destroy]
 
   # GET /professionals
   def index
     @professionals = Professional.paginate(page: params[:page], per_page: 12)
   end
-
-  # GET /professionals/1
-  def show; end
 
   # GET /professionals/new
   def new

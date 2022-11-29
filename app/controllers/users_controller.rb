@@ -1,16 +1,12 @@
 # frozen_string_literal: true
 
-class UsersController < ApplicationController
+class UsersController < BackofficeController
   before_action :set_user, only: %i[edit update destroy]
-  before_action :authenticate_user!
 
   # GET /users
   def index
     @users = User.paginate(page: params[:page], per_page: 20)
   end
-
-  # GET /users/1
-  # def show; end
 
   # GET /users/new
   def new
