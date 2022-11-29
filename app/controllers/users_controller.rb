@@ -27,7 +27,7 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to @user, notice: 'User was successfully created.'
     else
-      flash[:error] = @user.errors.full_messages.join(', ')
+      # flash[:error] = @user.errors.full_messages.join(', ')
       render :new, status: :unprocessable_entity
     end
   end
@@ -37,7 +37,7 @@ class UsersController < ApplicationController
     if @user.update(user_params.merge(password: user_params[:password].presence))
       redirect_to @user, notice: 'User was successfully updated.'
     else
-      flash[:error] = @user.errors.full_messages.join(', ')
+      # flash[:error] = @user.errors.full_messages.join(', ')
       render :edit, status: :unprocessable_entity
     end
   end

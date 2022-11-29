@@ -6,6 +6,12 @@ es:
         age: Edad
       car:
         year: Anio
+      user:
+        first_name: Nombre
+        last_name: Apellido
+        phone: Apellido
+        birthday: Fecha de nacimiento
+        password: Contraseña
     models:
       client:
         article: El
@@ -15,6 +21,10 @@ es:
         article: El
         one: Auto
         other: Autos
+      test:
+        article: El
+        one: Test
+        other: Tests
     errors:
       messages:
         record_invalid: "La validación falló: %{errors}"
