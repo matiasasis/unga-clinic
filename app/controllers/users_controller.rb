@@ -27,7 +27,6 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to users_url, notice: "#{I18n.t("activerecord.models.user.one")} creado exitosamente."
     else
-      flash[:error] = @user.errors.full_messages.join(', ')
       render :new, status: :unprocessable_entity
     end
   end
@@ -37,7 +36,6 @@ class UsersController < ApplicationController
     if @user.update(user_params.merge(password: user_params[:password].presence))
       redirect_to users_url, notice: "#{I18n.t("activerecord.models.user.one")} modificado exitosamente."
     else
-      flash[:error] = @user.errors.full_messages.join(', ')
       render :edit, status: :unprocessable_entity
     end
   end
