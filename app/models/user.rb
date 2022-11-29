@@ -6,7 +6,7 @@ class User < ApplicationRecord
   devise :database_authenticatable,
          :recoverable, :rememberable, :validatable
 
-  validates_presence_of :first_name, :last_name, :email
+  validates :first_name, :last_name, :email, presence: true
 
   def to_s
     "#{first_name} #{last_name}"
