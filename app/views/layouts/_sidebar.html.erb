@@ -1,8 +1,7 @@
 <div class="sidebar">
   <div class="sidebar-wrapper">
     <ul class="nav">
-      <%= menu_item_html(path: clients_path, icon: 'tim-icons icon-badge', text: 'Clientes', menu_active_path: [clients_path]) %>
-      <%= menu_item_html(path: users_path, icon: 'tim-icons icon-single-02', text: 'Usuarios', menu_active_path: [users_path]) %>
+      <%= menu_item_html(path: users_path, icon: 'tim-icons icon-single-02', text: t("activerecord.models.user.multiple"), menu_active_path: [users_path]) %>
     </ul>
   </div>
 </div>

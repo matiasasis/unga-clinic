@@ -2,31 +2,17 @@
 es:
   activerecord:
     attributes:
-      client:
-        age: Edad
-      car:
-        year: Anio
       user:
         first_name: Nombre
         last_name: Apellido
         phone: Apellido
         birthday: Fecha de nacimiento
         password: Contraseña
-      test:
-        name: Nombre
     models:
-      client:
+      user:
         article: El
-        one: Cliente
-        other: Clientes
-      car:
-        article: El
-        one: Auto
-        other: Autos
-      test:
-        article: El
-        one: Test
-        other: Tests
+        one: Usuario
+        multiple: Usuarios
     errors:
       messages:
         record_invalid: "La validación falló: %{errors}"
