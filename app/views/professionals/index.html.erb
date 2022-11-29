@@ -1,0 +1,42 @@
+<div class="row" id="professionals">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header">
+        <div class="tools float-right">
+          <%= link_to "Nuevo #{t("activerecord.models.professional.one")}", new_professional_path, class: 'btn btn-info' %>
+        </div>
+        <h1 class="card-title"><%= t("activerecord.models.professional.multiple") %></h1>
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table">
+            <thead class="text-primary">
+            <tr>
+              <th><%= t("activerecord.attributes.professional.first_name") %></th>
+              <th><%= t("activerecord.attributes.professional.last_name") %></th>
+              <th><%= t("activerecord.attributes.professional.email") %></th>
+              <th><%= t("activerecord.attributes.professional.phone") %></th>
+              <th></th>
+            </tr>
+            </thead>
+            <tbody>
+              <% @professionals.each do |professional| %>
+                <tr>
+                  <td><%= professional.first_name %></td>
+                  <td><%= professional.last_name %></td>
+                  <td><%= professional.email %></td>
+                  <td><%= professional.phone %></td>
+                  <td class="text-right">
+                    <%= link_to_icon '', edit_professional_path(professional), 'btn btn-sm btn-warning', 'far fa-edit' %>
+                    <%= delete_resource_icon professional %>
+                  </td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+        <%= will_paginate @professionals, renderer: WillPaginate::ActionView::Bootstrap4LinkRenderer %>
+      </div>
+    </div>
+  </div>
+</div>

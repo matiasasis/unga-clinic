@@ -1,16 +1,12 @@
 # frozen_string_literal: true
 
-class UsersController < ApplicationController
+class UsersController < BackofficeController
   before_action :set_user, only: %i[edit update destroy]
-  before_action :authenticate_user!
 
   # GET /users
   def index
     @users = User.paginate(page: params[:page], per_page: 20)
   end
-
-  # GET /users/1
-  # def show; end
 
   # GET /users/new
   def new
@@ -25,7 +21,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      redirect_to users_url, notice: "#{I18n.t("activerecord.models.user.one")} creado exitosamente."
+      redirect_to users_url, notice: "#{I18n.t('activerecord.models.user.one')} creado exitosamente."
     else
       render :new, status: :unprocessable_entity
     end
@@ -34,7 +30,7 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1
   def update
     if @user.update(user_params.merge(password: user_params[:password].presence))
-      redirect_to users_url, notice: "#{I18n.t("activerecord.models.user.one")} modificado exitosamente."
+      redirect_to users_url, notice: "#{I18n.t('activerecord.models.user.one')} modificado exitosamente."
     else
       render :edit, status: :unprocessable_entity
     end
@@ -43,7 +39,7 @@ class UsersController < ApplicationController
   # DELETE /users/1
   def destroy
     @user.destroy
-    redirect_to users_url, notice: "#{I18n.t("activerecord.models.user.one")} eliminado exitosamente."
+    redirect_to users_url, notice: "#{I18n.t('activerecord.models.user.one')} eliminado exitosamente."
   end
 
   private
