@@ -1,0 +1,23 @@
+<%= form_with(model: faq) do |form| %>
+  <%= render 'layouts/notify_form_error', model: :faq, errors: faq.errors %>
+
+  <div>
+    <%= form.label :title, style: "display: block" %>
+    <%= form.text_field :title, class: 'form-control' %>
+  </div>
+
+  <div>
+    <%= form.label :answer, style: "display: block" %>
+    <%= form.text_field :answer, class: 'form-control' %>
+  </div>
+
+  <div>
+    <%= form.label :show, style: "display: block" %>
+    <%= form.check_box :show, class: 'form-control' %>
+  </div>
+
+  <div>
+    <%= form.submit 'Aceptar', class: 'btn btn-fill btn-success animation-on-hover mr-2' %>
+    <%= link_to 'Volver', faqs_url, class: 'btn btn-simple text-white' %>
+  </div>
+<% end %>

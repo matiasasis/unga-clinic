@@ -10,9 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_30_191647) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_01_181645) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "faqs", force: :cascade do |t|
+    t.string "title"
+    t.string "answer"
+    t.boolean "show"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.datetime "deleted_at"
+    t.index ["deleted_at"], name: "index_faqs_on_deleted_at"
+  end
 
   create_table "professionals", force: :cascade do |t|
     t.string "first_name"
