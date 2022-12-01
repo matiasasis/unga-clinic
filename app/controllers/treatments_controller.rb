@@ -1,15 +1,12 @@
 # frozen_string_literal: true
 
 class TreatmentsController < ApplicationController
-  before_action :set_treatment, only: %i[show edit update destroy]
+  before_action :set_treatment, only: %i[edit update destroy]
 
   # GET /treatments
   def index
     @treatments = Treatment.paginate(page: params[:page], per_page: 12)
   end
-
-  # GET /treatments/1
-  def show; end
 
   # GET /treatments/new
   def new

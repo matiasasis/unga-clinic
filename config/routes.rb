@@ -2,7 +2,7 @@
 
 Rails.application.routes.draw do
   root 'application#default_route'
-  resources :treatments
+  resources :treatments, except: [:show]
   resources :treatment_types, except: [:show]
   resources :professionals, except: [:show]
   resources :users, except: [:show]
