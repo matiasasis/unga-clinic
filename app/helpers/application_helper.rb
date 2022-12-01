@@ -59,4 +59,11 @@ module ApplicationHelper
   def resource_human_name(resource_name)
     I18n.t("activerecord.models.#{resource_name.to_s.underscore}.one")
   end
+
+  def association_select(form, association_field, relation)
+    form.select(association_field,
+                relation.collect { |p| [p.to_s, p.id] },
+                { prompt: ' - Seleccione una opción - ' },
+                class: 'form-control')
+  end
 end

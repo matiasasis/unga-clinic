@@ -1,6 +1,11 @@
 # frozen_string_literal: true
 
 class ApplicationController < ActionController::Base
+
+  def default_route
+    redirect_to '/treatments'
+  end
+
   # Default URL after sign out
   def after_sign_out_path_for(_user)
     '/auth/sign_in'

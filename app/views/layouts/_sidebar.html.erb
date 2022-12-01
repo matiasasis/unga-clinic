@@ -1,9 +1,22 @@
 <div class="sidebar">
   <div class="sidebar-wrapper">
     <ul class="nav">
-      <%= menu_item_html(path: professionals_path, icon: 'tim-icons icon-badge', text: t("activerecord.models.professional.multiple"), menu_active_path: [professionals_path]) %>
-      <%= menu_item_html(path: treatment_types_path, icon: 'tim-icons icon-single-copy-04', text: t("activerecord.models.treatment_type.multiple"), menu_active_path: [treatment_types_path]) %>
-      <%= menu_item_html(path: users_path, icon: 'tim-icons icon-single-02', text: t("activerecord.models.user.multiple"), menu_active_path: [users_path]) %>
+      <%= menu_item_html(path: treatments_path,
+                         icon: 'tim-icons icon-atom',
+                         text: t("activerecord.models.treatment.multiple"),
+                         menu_active_path: [treatments_path]) %>
+      <%= menu_item_html(path: professionals_path,
+                         icon: 'tim-icons icon-badge',
+                         text: t("activerecord.models.professional.multiple"),
+                         menu_active_path: [professionals_path]) %>
+      <%= menu_item_html(path: treatment_types_path,
+                         icon: 'tim-icons icon-single-copy-04',
+                         text: t("activerecord.models.treatment_type.multiple"),
+                         menu_active_path: [treatment_types_path]) %>
+      <%= menu_item_html(path: users_path,
+                         icon: 'tim-icons icon-single-02',
+                         text: t("activerecord.models.user.multiple"),
+                         menu_active_path: [users_path]) %>
     </ul>
   </div>
 </div>

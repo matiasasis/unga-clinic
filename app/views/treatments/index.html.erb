@@ -1,0 +1,52 @@
+<div class="row" id="treatments">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header">
+        <div class="tools float-right">
+          <%= link_to "Nuevo #{t("activerecord.models.treatment.one")}", new_treatment_path, class: 'btn btn-info' %>
+        </div>
+        <h1 class="card-title"><%= t("activerecord.models.treatment.multiple") %></h1>
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table">
+            <thead class="text-primary">
+            <tr>
+              <th><%= t("activerecord.attributes.treatment.name") %></th>
+              <th><%= t("activerecord.attributes.treatment.description") %></th>
+              <th><%= t("activerecord.attributes.treatment.place") %></th>
+              <th><%= t("activerecord.attributes.treatment.price") %></th>
+              <th><%= t("activerecord.attributes.treatment.downpayment") %></th>
+              <th><%= t("activerecord.attributes.treatment.professional") %></th>
+              <th><%= t("activerecord.attributes.treatment.duration_min") %></th>
+              <th><%= t("activerecord.attributes.treatment.treatment_type") %></th>
+              <th><%= t("activerecord.attributes.treatment.room") %></th>
+              <th></th>
+            </tr>
+            </thead>
+            <tbody>
+              <% @treatments.each do |treatment| %>
+                <tr>
+                  <td><%= treatment.name %></td>
+                  <td><%= treatment.description.truncate(100) %></td>
+                  <td><%= treatment.place %></td>
+                  <td><%= treatment.price %></td>
+                  <td><%= treatment.downpayment %></td>
+                  <td><%= treatment.professional.to_s %></td>
+                  <td><%= treatment.duration_min %></td>
+                  <td><%= treatment.treatment_type.to_s %></td>
+                  <td><%= treatment.room %></td>
+                  <td class="text-right">
+                    <%= link_to_icon '', edit_treatment_path(treatment), 'btn btn-sm btn-warning', 'far fa-edit' %>
+                    <%= delete_resource_icon treatment %>
+                  </td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+        <%= will_paginate @treatments, renderer: WillPaginate::ActionView::Bootstrap4LinkRenderer %>
+      </div>
+    </div>
+  </div>
+</div>
