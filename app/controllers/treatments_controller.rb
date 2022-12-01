@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class TreatmentsController < ApplicationController
-  before_action :set_treatment, only: %i[ show edit update destroy ]
+  before_action :set_treatment, only: %i[show edit update destroy]
 
   # GET /treatments
   def index
@@ -7,8 +9,7 @@ class TreatmentsController < ApplicationController
   end
 
   # GET /treatments/1
-  def show
-  end
+  def show; end
 
   # GET /treatments/new
   def new
@@ -16,8 +17,7 @@ class TreatmentsController < ApplicationController
   end
 
   # GET /treatments/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /treatments
   def create
@@ -46,13 +46,15 @@ class TreatmentsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_treatment
-      @treatment = Treatment.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def treatment_params
-      params.require(:treatment).permit(:name, :description, :place, :price, :downpayment, :professional_id, :duration_min, :treatment_type_id, :room)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_treatment
+    @treatment = Treatment.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def treatment_params
+    params.require(:treatment).permit(:name, :description, :place, :price, :downpayment, :professional_id,
+                                      :duration_min, :treatment_type_id, :room)
+  end
 end

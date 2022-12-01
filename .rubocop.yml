@@ -5,3 +5,7 @@ Style/Documentation:
 
 Rails/OutputSafety:
   Enabled: false
+
+AllCops:
+  Exclude:
+    - 'db/**/*.rb'
