@@ -28,6 +28,7 @@ es:
       faq:
         title: Título
         answer: Respuesta
+        show: Mostrar
     models:
       user:
         article: El

@@ -8,12 +8,17 @@
 
   <div>
     <%= form.label :answer, style: "display: block" %>
-    <%= form.text_field :answer, class: 'form-control' %>
+    <%= form.text_area :answer, class: 'form-control', rows: 4 %>
   </div>
 
-  <div>
-    <%= form.label :show, style: "display: block" %>
-    <%= form.check_box :show, class: 'form-control' %>
+  <div class="input-group">
+    <div class="form-check">
+      <label class="form-check-label">
+      <%= form.label :show, style: "display: block" %>
+        <%= form.check_box :show, class: 'form-check-input' %>
+        <span class="form-check-sign"></span>
+      </label>
+    </div>
   </div>
 
   <div>
