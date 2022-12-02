@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  root 'professionals#index'
+  root 'application#default_route'
+  resources :treatments, except: [:show]
   resources :treatment_types, except: [:show]
   resources :professionals, except: [:show]
   resources :users, except: [:show]

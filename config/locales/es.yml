@@ -14,6 +14,17 @@ es:
         phone: Celular
       treatment_type:
         name: Nombre
+      treatment:
+        name: Nombre
+        description: Descripción
+        place: Lugar
+        price: Precio
+        downpayment: Seña (%)
+        professional: Profesional
+        professional_id: Profesional
+        duration_min: Duración (min)
+        treatment_type: Tipo de Tratamiento
+        room: Consultorio
     models:
       user:
         article: El
@@ -27,6 +38,10 @@ es:
         article: El
         one: Tipo de Tratamiento
         multiple: Tipos de Tratamiento
+      treatment:
+        article: El
+        one: Tratamiento
+        multiple: Tratamientos
     errors:
       messages:
         record_invalid: "La validación falló: %{errors}"

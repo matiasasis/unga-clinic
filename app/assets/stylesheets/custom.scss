@@ -11,3 +11,14 @@
 nav.pagination {
   justify-content: center;
 }
+
+textarea.form-control {
+  max-height: inherit;
+  border: 1px solid #2b3553;
+  border-radius: 0.4285rem;
+  padding: 0.5rem 0.7rem;
+
+  &:focus {
+    border: 1px solid #e14eca;
+  }
+}

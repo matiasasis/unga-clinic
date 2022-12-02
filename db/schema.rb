@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_29_021932) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_30_191647) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -33,6 +33,22 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_29_021932) do
     t.index ["deleted_at"], name: "index_treatment_types_on_deleted_at"
   end
 
+  create_table "treatments", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.string "place"
+    t.integer "price"
+    t.integer "downpayment"
+    t.bigint "professional_id", null: false
+    t.integer "duration_min"
+    t.bigint "treatment_type_id", null: false
+    t.string "room"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["professional_id"], name: "index_treatments_on_professional_id"
+    t.index ["treatment_type_id"], name: "index_treatments_on_treatment_type_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
@@ -51,4 +67,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_29_021932) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "treatments", "professionals"
+  add_foreign_key "treatments", "treatment_types"
 end
