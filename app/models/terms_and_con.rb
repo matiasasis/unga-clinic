@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Faq < ApplicationRecord
+class TermsAndCon < ApplicationRecord
   acts_as_paranoid
 
   def to_s

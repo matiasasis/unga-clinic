@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class FaqsController < ApplicationController
-  before_action :set_faq, only: %i[ show edit update destroy ]
+  before_action :set_faq, only: %i[show edit update destroy]
 
   # GET /faqs
   def index
@@ -43,13 +43,14 @@ class FaqsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_faq
-      @faq = Faq.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def faq_params
-      params.require(:faq).permit(:title, :answer, :show)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_faq
+    @faq = Faq.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def faq_params
+    params.require(:faq).permit(:title, :answer, :show)
+  end
 end

@@ -24,8 +24,8 @@ end
 group :development do
   gem 'annotate'
   gem 'awesome_print'
+  gem 'hirb'
   gem 'rubocop', require: false
   gem 'rubocop-rails', require: false
   gem 'web-console'
-  gem 'hirb'
 end

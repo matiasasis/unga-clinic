@@ -6,8 +6,11 @@ class CreateFaqs < ActiveRecord::Migration[7.0]
       t.string :title
       t.string :answer
       t.boolean :show
+      t.datetime :deleted_at
 
       t.timestamps
     end
+
+    add_index :faqs, :deleted_at
   end
 end

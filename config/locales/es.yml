@@ -49,6 +49,10 @@ es:
         article: La
         one: Pregunta Frecuente
         multiple: Preguntas Frecuentes
+      terms_and_cons:
+        article: Los
+        one: Términos y Condiciones
+        multiple: Términos y Condiciones
     errors:
       messages:
         record_invalid: "La validación falló: %{errors}"

@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   resources :professionals, except: [:show]
   resources :users, except: [:show]
   resources :faqs, except: [:show]
+  resources :terms_and_cons
   devise_for :users, path: 'auth'
 end
