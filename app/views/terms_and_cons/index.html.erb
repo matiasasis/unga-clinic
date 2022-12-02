@@ -3,33 +3,12 @@
     <div class="card">
       <div class="card-header">
         <div class="tools float-right">
-          <%= link_to "Nuevo #{t("activerecord.models.terms_and_con.one")}", new_terms_and_con_path, class: 'btn btn-info' %>
+          <%= link_to_icon '', edit_terms_and_con_path(@terms_and_cons), 'btn btn-sm btn-warning', 'far fa-edit' %>
         </div>
         <h1 class="card-title"><%= t("activerecord.models.terms_and_con.multiple") %></h1>
       </div>
       <div class="card-body">
-        <div class="table-responsive">
-          <table class="table">
-            <thead class="text-primary">
-            <tr>
-              <th><%= t("activerecord.attributes.terms_and_con.text") %></th>
-              <th></th>
-            </tr>
-            </thead>
-            <tbody>
-              <% @terms_and_cons.each do |terms_and_con| %>
-                <tr>
-                  <td><%= terms_and_con.text %></td>
-                  <td class="text-right">
-                    <%= link_to_icon '', edit_terms_and_con_path(terms_and_con), 'btn btn-sm btn-warning', 'far fa-edit' %>
-                    <%= delete_resource_icon terms_and_con %>
-                  </td>
-                </tr>
-              <% end %>
-            </tbody>
-          </table>
-        </div>
-        <%= will_paginate @terms_and_cons, renderer: WillPaginate::ActionView::Bootstrap4LinkRenderer %>
+        <%= @terms_and_cons.text&.html_safe %>
       </div>
     </div>
   </div>
