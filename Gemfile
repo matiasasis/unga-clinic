@@ -16,8 +16,11 @@ gem 'sprockets-rails'
 gem 'stimulus-rails'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'will_paginate', '~> 3.3'
+gem 'image_processing', '~> 1.12', '>= 1.12.2'
+gem "aws-sdk-s3", require: false
 
 group :development, :test do
+  gem 'dotenv-rails', require: 'dotenv/rails-now'
   gem 'debug', platforms: %i[mri mingw x64_mingw]
 end
 

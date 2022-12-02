@@ -5,7 +5,7 @@ class TreatmentsController < BackofficeController
 
   # GET /treatments
   def index
-    @treatments = Treatment.paginate(page: params[:page], per_page: 12)
+    @treatments = Treatment.paginate(page: params[:page], per_page: 8).order(name: :asc)
   end
 
   # GET /treatments/new
@@ -52,6 +52,6 @@ class TreatmentsController < BackofficeController
   # Only allow a list of trusted parameters through.
   def treatment_params
     params.require(:treatment).permit(:name, :description, :place, :price, :downpayment, :professional_id,
-                                      :duration_min, :treatment_type_id, :room)
+                                      :duration_min, :treatment_type_id, :room, pictures: [])
   end
 end

@@ -1,0 +1,19 @@
+.treatment-form {
+  .pictures {
+    padding: 20px 0;
+    display: flex;
+    .picture {
+      img {
+        width: 100%;
+      }
+      .delete-check {
+        display: flex;
+        justify-content: center;
+        label {
+          margin-bottom: 0;
+          margin-left: 5px;
+        }
+      }
+    }
+  }
+}

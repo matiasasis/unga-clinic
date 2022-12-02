@@ -21,6 +21,7 @@
               <th><%= t("activerecord.attributes.treatment.duration_min") %></th>
               <th><%= t("activerecord.attributes.treatment.treatment_type") %></th>
               <th><%= t("activerecord.attributes.treatment.room") %></th>
+              <th><%= t("activerecord.attributes.treatment.pictures") %></th>
               <th></th>
             </tr>
             </thead>
@@ -36,6 +37,7 @@
                   <td><%= treatment.duration_min %></td>
                   <td><%= treatment.treatment_type.to_s %></td>
                   <td><%= treatment.room %></td>
+                  <td><%= treatment.pictures.count %></td>
                   <td class="text-right">
                     <%= link_to_icon '', edit_treatment_path(treatment), 'btn btn-sm btn-warning', 'far fa-edit' %>
                     <%= delete_resource_icon treatment %>

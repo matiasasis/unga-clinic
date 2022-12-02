@@ -22,3 +22,7 @@ textarea.form-control {
     border: 1px solid #e14eca;
   }
 }
+
+input.form-control[type=file] {
+  margin-bottom: 20px;
+}

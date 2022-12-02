@@ -24,7 +24,9 @@ es:
         professional_id: Profesional
         duration_min: Duración (min)
         treatment_type: Tipo de Tratamiento
+        treatment_type_id: Tipo de Tratamiento
         room: Consultorio
+        pictures: Imágenes
       faq:
         title: Título
         answer: Respuesta

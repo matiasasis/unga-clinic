@@ -60,11 +60,11 @@ module ApplicationHelper
     I18n.t("activerecord.models.#{resource_name.to_s.underscore}.one")
   end
 
-  def association_select(form, association_field, relation)
+  def association_select(form, association_field, relation, required: false)
     form.select(association_field,
                 relation.collect { |p| [p.to_s, p.id] },
                 { prompt: ' - Seleccione una opción - ' },
-                class: 'form-control')
+                class: 'form-control', required:)
   end
 
   def yesno(boolean)
