@@ -5,3 +5,5 @@
 //= require vendor/perfect-scrollbar.jquery.min.js
 //= require vendor/moment.min.js
 //= require vendor/bootstrap-notify.js
+
+//= require common.js
