@@ -1,0 +1,13 @@
+<%= form_with(model: terms_and_con) do |form| %>
+  <%= render 'layouts/notify_form_error', model: :terms_and_con, errors: terms_and_con.errors %>
+
+  <div>
+    <%= form.label :text, style: "display: block" %>
+    <%= form.text_area :text, class: 'form-control', rows: 30 %>
+  </div>
+
+  <div>
+    <%= form.submit 'Aceptar', class: 'btn btn-fill btn-success animation-on-hover mr-2' %>
+    <%= link_to 'Volver', terms_and_cons_url, class: 'btn btn-simple text-white' %>
+  </div>
+<% end %>

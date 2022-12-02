@@ -1,0 +1,40 @@
+<div class="row" id="faqs">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header">
+        <div class="tools float-right">
+          <%= link_to "Nuevo #{t("activerecord.models.faq.one")}", new_faq_path, class: 'btn btn-info' %>
+        </div>
+        <h1 class="card-title"><%= t("activerecord.models.faq.multiple") %></h1>
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table">
+            <thead class="text-primary">
+            <tr>
+              <th><%= t("activerecord.attributes.faq.title") %></th>
+              <th><%= t("activerecord.attributes.faq.answer") %></th>
+              <th><%= t("activerecord.attributes.faq.show") %></th>
+              <th></th>
+            </tr>
+            </thead>
+            <tbody>
+              <% @faqs.each do |faq| %>
+                <tr>
+                  <td><%= faq.title %></td>
+                  <td><%= faq.answer %></td>
+                  <td><%= yesno faq.show %></td>
+                  <td class="text-right">
+                    <%= link_to_icon '', edit_faq_path(faq), 'btn btn-sm btn-warning', 'far fa-edit' %>
+                    <%= delete_resource_icon faq %>
+                  </td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+        <%= will_paginate @faqs, renderer: WillPaginate::ActionView::Bootstrap4LinkRenderer %>
+      </div>
+    </div>
+  </div>
+</div>

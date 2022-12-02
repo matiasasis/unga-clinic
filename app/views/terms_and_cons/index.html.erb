@@ -1,0 +1,15 @@
+<div class="row" id="terms_and_cons">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header">
+        <div class="tools float-right">
+          <%= link_to_icon '', edit_terms_and_con_path(@terms_and_cons), 'btn btn-sm btn-warning', 'far fa-edit' %>
+        </div>
+        <h1 class="card-title"><%= t("activerecord.models.terms_and_con.multiple") %></h1>
+      </div>
+      <div class="card-body">
+        <%= @terms_and_cons.text&.html_safe %>
+      </div>
+    </div>
+  </div>
+</div>

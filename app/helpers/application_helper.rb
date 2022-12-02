@@ -66,4 +66,8 @@ module ApplicationHelper
                 { prompt: ' - Seleccione una opción - ' },
                 class: 'form-control')
   end
+
+  def yesno(boolean)
+    boolean ? '✅' : '❌'
+  end
 end

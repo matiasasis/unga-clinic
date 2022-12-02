@@ -25,6 +25,10 @@ es:
         duration_min: Duración (min)
         treatment_type: Tipo de Tratamiento
         room: Consultorio
+      faq:
+        title: Título
+        answer: Respuesta
+        show: Mostrar
     models:
       user:
         article: El
@@ -42,6 +46,14 @@ es:
         article: El
         one: Tratamiento
         multiple: Tratamientos
+      faq:
+        article: La
+        one: Pregunta Frecuente
+        multiple: Preguntas Frecuentes
+      terms_and_con:
+        article: Los
+        one: Términos y Condiciones
+        multiple: Términos y Condiciones
     errors:
       messages:
         record_invalid: "La validación falló: %{errors}"
