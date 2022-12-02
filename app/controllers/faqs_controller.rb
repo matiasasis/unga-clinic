@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class FaqsController < ApplicationController
-  before_action :set_faq, only: %i[show edit update destroy]
+  before_action :set_faq, only: %i[edit update destroy]
 
   # GET /faqs
   def index
