@@ -4,6 +4,6 @@ class TermsAndCon < ApplicationRecord
   acts_as_paranoid
 
   def to_s
-    name
+    'Términos y Condiciones'
   end
 end
