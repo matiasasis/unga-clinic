@@ -3,6 +3,8 @@
 class TreatmentType < ApplicationRecord
   acts_as_paranoid
 
+  has_many :treatments
+
   def to_s
     name
   end

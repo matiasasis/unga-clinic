@@ -3,6 +3,8 @@
 class Professional < ApplicationRecord
   acts_as_paranoid
 
+  has_many :treatments
+
   def to_s
     "#{first_name} #{last_name}"
   end
