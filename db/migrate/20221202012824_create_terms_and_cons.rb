@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateTermsAndCons < ActiveRecord::Migration[7.0]
   def change
     create_table :terms_and_cons do |t|
