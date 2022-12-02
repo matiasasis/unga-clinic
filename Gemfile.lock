@@ -260,8 +260,8 @@ DEPENDENCIES
   bootsnap
   debug
   devise
-  hirb
   dotenv-rails
+  hirb
   image_processing (~> 1.12, >= 1.12.2)
   paranoia (~> 2.6.1)
   pg (~> 1.1)

@@ -56,9 +56,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_02_014614) do
     t.string "title"
     t.string "answer"
     t.boolean "show"
+    t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.datetime "deleted_at"
     t.index ["deleted_at"], name: "index_faqs_on_deleted_at"
   end
 
