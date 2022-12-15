@@ -21,9 +21,7 @@ require 'action_cable/engine'
 Bundler.require(*Rails.groups)
 
 # Load dotenv only in development or test environment
-if ['development', 'test'].include? ENV['RAILS_ENV']
-  Dotenv::Railtie.load
-end
+Dotenv::Railtie.load if %w[development test].include? ENV['RAILS_ENV']
 
 module UngaClinic
   class Application < Rails::Application
