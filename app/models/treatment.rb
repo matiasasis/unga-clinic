@@ -5,7 +5,7 @@ class Treatment < ApplicationRecord
   belongs_to :treatment_type
   has_many_attached :pictures, dependent: :destroy
 
-  validates_presence_of :name, :price, :professional_id, :treatment_type_id
+  validates :name, :price, :professional_id, :treatment_type_id, presence: true
 
   def to_s
     name

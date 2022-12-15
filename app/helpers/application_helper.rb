@@ -10,7 +10,7 @@ module ApplicationHelper
   end
 
   def delete_resource_icon(resource, size: 'btn-sm')
-    render 'layouts/confirm_resource_delete_modal', resource:, size:
+    render 'layouts/backoffice/confirm_resource_delete_modal', resource:, size:
   end
 
   def link_to_icon(text, path, clazz, icon, target = '_self')

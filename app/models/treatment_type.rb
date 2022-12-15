@@ -3,7 +3,7 @@
 class TreatmentType < ApplicationRecord
   acts_as_paranoid
 
-  has_many :treatments
+  has_many :treatments, dependent: :nullify
 
   def to_s
     name

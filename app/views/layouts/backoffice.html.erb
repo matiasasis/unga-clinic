@@ -7,8 +7,8 @@
     <%= csp_meta_tag %>
     <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet" />
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload", media: 'all' %>
-    <%= javascript_include_tag "application", defer: false %>
+    <%= stylesheet_link_tag "backoffice/backoffice", "data-turbo-track": "reload", media: 'all' %>
+    <%= javascript_include_tag "backoffice/backoffice", defer: false %>
   </head>
 
   <body class="sidebar-mini ">
@@ -18,16 +18,15 @@
           <i class="tim-icons icon-align-center visible-on-sidebar-regular text-muted"></i>
           <i class="tim-icons icon-bullet-list-67 visible-on-sidebar-mini text-muted"></i>
         </button>
-        asd
       </div>
-      <%= render 'layouts/sidebar' %>
+      <%= render 'layouts/backoffice/sidebar' %>
       <div class="main-panel">
-        <%= render 'layouts/navbar' %>
+        <%= render 'layouts/backoffice/navbar' %>
         <div class="content">
-          <%= render 'layouts/notify' %>
+          <%= render 'layouts/backoffice/notify' %>
           <%= yield %>
         </div>
-        <%= render 'layouts/footer' %>
+        <%= render 'layouts/backoffice/footer' %>
       </div>
     </div>
   </body>

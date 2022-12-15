@@ -5,8 +5,10 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.1.1'
 
+gem 'aws-sdk-s3', require: false
 gem 'bootsnap', require: false
 gem 'devise'
+gem 'image_processing', '~> 1.12', '>= 1.12.2'
 gem 'paranoia', '~> 2.6.1'
 gem 'pg', '~> 1.1'
 gem 'puma', '~> 5.0'
@@ -16,12 +18,10 @@ gem 'sprockets-rails'
 gem 'stimulus-rails'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'will_paginate', '~> 3.3'
-gem 'image_processing', '~> 1.12', '>= 1.12.2'
-gem "aws-sdk-s3", require: false
 
 group :development, :test do
-  gem 'dotenv-rails', require: 'dotenv/rails-now'
   gem 'debug', platforms: %i[mri mingw x64_mingw]
+  gem 'dotenv-rails', require: 'dotenv/rails-now'
 end
 
 group :development do
