@@ -6,6 +6,6 @@ class WebController < ApplicationController
   def main; end
 
   def frequently_asked_questions
-    @faqs = Faq.paginate(page: params[:page], per_page: 12)
+    @faqs = Faq.all
   end
 end
