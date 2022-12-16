@@ -8,4 +8,8 @@ class WebController < ApplicationController
   def frequently_asked_questions
     @faqs = Faq.where(show: true)
   end
+
+  def terms_and_conditions
+    @terms_and_cons = TermsAndCon.all
+  end
 end

@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   devise_for :users, path: 'auth'
 
   get '/preguntas-frecuentes', to: 'web#frequently_asked_questions', as: 'frequently_asked_questions'
+  get '/terminos-condiciones', to: 'web#terms_and_conditions', as: 'terms_and_conditions'
 end

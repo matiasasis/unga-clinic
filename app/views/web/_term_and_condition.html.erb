@@ -1,0 +1,19 @@
+<div class="section section-comments">
+  <% @terms_and_cons.each do |item| %>
+    <div class="row" >
+      <div class="col-md-8 ml-auto mr-auto">
+        <div class="media-area">
+          <div class="media">
+            <a class="float-left">
+            </a>
+            <div class="media-body">
+              <h4 class="media-heading">
+                <%= item.text&.html_safe %>
+              </h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
