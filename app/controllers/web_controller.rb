@@ -3,7 +3,9 @@
 class WebController < ApplicationController
   layout 'web'
 
-  def main; end
+  def main
+    @treatments = Treatment.all
+  end
 
   def frequently_asked_questions
     @faqs = Faq.where(show: true)

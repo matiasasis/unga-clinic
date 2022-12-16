@@ -2,7 +2,7 @@
 
 module ApplicationHelper
   def app_name
-    'Clinica Unga'
+    'Unga Club'
   end
 
   def app_initials
