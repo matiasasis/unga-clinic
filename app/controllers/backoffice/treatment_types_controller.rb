@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class TreatmentTypesController < BackofficeController
+class TreatmentTypesController < Backoffice::BaseController
   before_action :set_treatment_type, only: %i[edit update destroy]
 
   # GET /treatment_types

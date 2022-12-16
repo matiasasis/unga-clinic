@@ -3,7 +3,7 @@
     <div class="card">
       <div class="card-header">
         <div class="tools float-right">
-          <%= link_to "Nuevo #{t("activerecord.models.treatment.one")}", new_treatment_path, class: 'btn btn-info' %>
+          <%= link_to "Nuevo #{t("activerecord.models.treatment.one")}", new_backoffice_treatment_path, class: 'btn btn-info' %>
         </div>
         <h1 class="card-title"><%= t("activerecord.models.treatment.multiple") %></h1>
       </div>
@@ -39,7 +39,7 @@
                   <td><%= treatment.room %></td>
                   <td><%= treatment.pictures.count %></td>
                   <td class="text-right">
-                    <%= link_to_icon '', edit_treatment_path(treatment), 'btn btn-sm btn-warning', 'far fa-edit' %>
+                    <%= link_to_icon '', edit_backoffice_treatment_path(treatment), 'btn btn-sm btn-warning', 'far fa-edit' %>
                     <%= delete_resource_icon treatment %>
                   </td>
                 </tr>

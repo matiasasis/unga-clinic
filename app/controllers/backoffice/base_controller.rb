@@ -1,5 +1,5 @@
 # frozen_string_literal: true
 
-class BackofficeController < ApplicationController
+class Backoffice::BaseController < ApplicationController
   before_action :authenticate_user!
 end

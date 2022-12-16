@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class FaqsController < BackofficeController
+class FaqsController < Backoffice::BaseController
   before_action :set_faq, only: %i[edit update destroy]
 
   # GET /faqs

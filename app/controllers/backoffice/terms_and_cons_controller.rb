@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class TermsAndConsController < BackofficeController
+class TermsAndConsController < Backoffice::BaseController
   before_action :set_terms_and_con, only: %i[edit update]
 
   # GET /terms_and_cons

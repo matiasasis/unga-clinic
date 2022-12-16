@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class ProfessionalsController < BackofficeController
+class ProfessionalsController < Backoffice::BaseController
   before_action :set_professional, only: %i[edit update destroy]
 
   # GET /professionals

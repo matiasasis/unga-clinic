@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class UsersController < BackofficeController
+class UsersController < Backoffice::BaseController
   before_action :set_user, only: %i[edit update destroy]
 
   # GET /users
