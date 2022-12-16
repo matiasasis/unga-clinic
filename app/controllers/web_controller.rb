@@ -6,6 +6,6 @@ class WebController < ApplicationController
   def main; end
 
   def frequently_asked_questions
-    @faqs = Faq.all
+    @faqs = Faq.where(show: true)
   end
 end
