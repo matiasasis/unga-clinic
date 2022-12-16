@@ -1,5 +1,5 @@
 <%= form_with(model: faq) do |form| %>
-  <%= render 'layouts/notify_form_error', model: :faq, errors: faq.errors %>
+  <%= render 'layouts/backoffice/notify_form_error', model: :faq, errors: faq.errors %>
 
   <div>
     <%= form.label :title, style: "display: block" %>

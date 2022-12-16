@@ -1,5 +1,5 @@
 <%= form_with(model: treatment_type) do |form| %>
-  <%= render 'layouts/notify_form_error', model: :treatment_type, errors: treatment_type.errors %>
+  <%= render 'layouts/backoffice/notify_form_error', model: :treatment_type, errors: treatment_type.errors %>
 
   <div>
     <%= form.label :name, style: "display: block" %>

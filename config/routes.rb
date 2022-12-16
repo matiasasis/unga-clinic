@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   resources :faqs, except: [:show]
   resources :terms_and_cons, only: %i[index edit update]
   devise_for :users, path: 'auth'
+
+  get '/preguntas-frecuentes', to: 'web#frequently_asked_questions', as: 'frequently_asked_questions'
 end
