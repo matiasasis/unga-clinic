@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :faqs, except: [:show]
   resources :terms_and_cons, only: %i[index edit update]
   devise_for :users, path: 'auth'
-
+  get '/tratamientos', to: 'web#treatments', as: :web_treatments
   get '/preguntas-frecuentes', to: 'web#frequently_asked_questions', as: 'frequently_asked_questions'
   get '/terminos-condiciones', to: 'web#terms_and_conditions', as: 'terms_and_conditions'
 end

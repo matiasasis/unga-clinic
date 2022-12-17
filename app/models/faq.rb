@@ -3,6 +3,8 @@
 class Faq < ApplicationRecord
   acts_as_paranoid
 
+  scope :shown, -> { where(show: true) }
+
   def to_s
     title
   end

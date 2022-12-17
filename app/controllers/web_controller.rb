@@ -7,6 +7,9 @@ class WebController < ApplicationController
     @treatments = Treatment.all
   end
 
+  def treatments
+  end
+
   def frequently_asked_questions
     @faqs = Faq.where(show: true)
   end
