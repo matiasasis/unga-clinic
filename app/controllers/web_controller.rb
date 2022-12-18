@@ -4,11 +4,11 @@ class WebController < ApplicationController
   layout 'web'
 
   def main
-    @treatments = Treatment.all
+    @treatments = Treatment.show
   end
 
   def treatments
-    @treatments = Treatment.all
+    @treatments = Treatment.show
   end
 
   def frequently_asked_questions

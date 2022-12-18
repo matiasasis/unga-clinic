@@ -52,6 +52,6 @@ class TreatmentsController < BackofficeController
   # Only allow a list of trusted parameters through.
   def treatment_params
     params.require(:treatment).permit(:name, :description, :place, :price, :downpayment, :professional_id,
-                                      :duration_min, :treatment_type_id, :room, pictures: [])
+                                      :duration_min, :treatment_type_id, :room, :show, pictures: [])
   end
 end
