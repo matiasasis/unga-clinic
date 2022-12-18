@@ -1,6 +1,6 @@
 <div class="treatment card card-blog">
   <div class="card-header card-header-image">
-    <a href="#pablo">
+    <a href="<%= web_treatment_path(treatment) %>">
       <%= image_tag treatment.pictures.first, class: 'avatar img-raised' %>
     </a>
   </div>
@@ -15,7 +15,7 @@
   </div>
   <div class="card-footer ">
     <div class="author">
-      <a href="#pablo">
+      <a href="<%= web_treatment_path(treatment) %>">
         <%= image_tag 'doctor-icon.png', class: 'avatar img-raised' %>
         <span><%= treatment.professional.to_s %></span>
       </a>
