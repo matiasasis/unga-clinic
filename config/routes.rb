@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-
-  resources :newsletters
+  # PUBLIC PAGES
+  root 'web#main'
   get '/tratamientos', to: 'web#treatments', as: :web_treatments
   get '/tratamientos/:treatment_slug', to: 'web#treatment', as: :web_treatment
   get '/preguntas-frecuentes', to: 'web#frequently_asked_questions', as: 'frequently_asked_questions'
