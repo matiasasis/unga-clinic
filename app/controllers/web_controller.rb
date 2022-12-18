@@ -12,7 +12,7 @@ class WebController < ApplicationController
   end
 
   def frequently_asked_questions
-    @faqs = Faq.where(show: true)
+    @faqs = Faq.show
   end
 
   def terms_and_conditions
