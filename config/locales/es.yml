@@ -27,6 +27,7 @@ es:
         treatment_type_id: Tipo de Tratamiento
         room: Consultorio
         pictures: Imágenes
+        show: Mostrar
       faq:
         title: Título
         answer: Respuesta

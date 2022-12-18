@@ -2,9 +2,10 @@
 <html>
   <head>
     <title><%= app_name %></title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <%= favicon_link_tag asset_path('unga-fav.png') %>
     <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet" />
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
     <%= stylesheet_link_tag "backoffice/backoffice", "data-turbo-track": "reload", media: 'all' %>

@@ -10,7 +10,7 @@
       <div class="row">
         <div class="col-lg-4">
           <%= form.label :price, style: "display: block" %>
-          <%= form.number_field :price, class: 'form-control', required: true %>
+          <%= form.number_field :price, class: 'form-control' %>
         </div>
 
         <div class="col-lg-4">
@@ -45,6 +45,18 @@
         <div class="col-lg-4">
           <%= form.label :room, style: "display: block" %>
           <%= form.text_field :room, class: 'form-control' %>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="input-group">
+            <div class="form-check">
+              <label class="form-check-label">
+              <%= form.label :show, style: "display: block" %>
+                <%= form.check_box :show, class: 'form-check-input' %>
+                <span class="form-check-sign"></span>
+              </label>
+            </div>
+          </div>
         </div>
       </div>
 

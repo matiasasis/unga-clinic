@@ -5,7 +5,9 @@ class Treatment < ApplicationRecord
   belongs_to :treatment_type
   has_many_attached :pictures, dependent: :destroy
 
-  validates :name, :price, :professional_id, :treatment_type_id, presence: true
+  validates :name, :professional_id, :treatment_type_id, presence: true
+
+  scope :show, -> { where(show: true) }
 
   def to_s
     name
@@ -24,6 +26,7 @@ end
 #  place             :string
 #  price             :integer
 #  room              :string
+#  show              :boolean          default(FALSE)
 #  created_at        :datetime         not null
 #  updated_at        :datetime         not null
 #  professional_id   :bigint           not null

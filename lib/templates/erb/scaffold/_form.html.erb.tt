@@ -1,5 +1,5 @@
 <%%= form_with(model: <%= model_resource_name %>) do |form| %>
-  <%%= render 'layouts/notify_form_error', model: :<%= model_resource_name %>, errors: <%= model_resource_name %>.errors %>
+  <%%= render 'layouts/backoffice/notify_form_error', model: :<%= model_resource_name %>, errors: <%= model_resource_name %>.errors %>
 
 <% attributes.each do |attribute| -%>
   <div>
