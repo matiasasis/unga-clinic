@@ -1,4 +1,4 @@
-<div class="row" id="treatments">
+<div class="row treatments-index" id="treatments">
   <div class="col-md-12">
     <div class="card">
       <div class="card-header">
@@ -12,6 +12,7 @@
           <table class="table">
             <thead class="text-primary">
             <tr>
+              <th></th>
               <th><%= t("activerecord.attributes.treatment.name") %></th>
               <th><%= t("activerecord.attributes.treatment.description") %></th>
               <th><%= t("activerecord.attributes.treatment.place") %></th>
@@ -28,6 +29,7 @@
             <tbody>
               <% @treatments.each do |treatment| %>
                 <tr>
+                  <td class="picture"><%= image_tag treatment.pictures.first if treatment.pictures %></td>
                   <td><%= treatment.name %></td>
                   <td><%= treatment.description.truncate(100) %></td>
                   <td><%= treatment.place %></td>
