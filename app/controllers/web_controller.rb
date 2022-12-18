@@ -10,6 +10,6 @@ class WebController < ApplicationController
   end
 
   def terms_and_conditions
-    @terms_and_cons = TermsAndCon.first
+    @terms_and_cons = TermsAndCon.first_or_create
   end
 end
