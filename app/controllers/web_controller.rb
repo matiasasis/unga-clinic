@@ -8,6 +8,7 @@ class WebController < ApplicationController
   end
 
   def treatments
+    @treatments = Treatment.all
   end
 
   def frequently_asked_questions
