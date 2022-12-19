@@ -25,12 +25,7 @@ class WebController < ApplicationController
   end
 
   def send_contact_data
-    @contact = Contact.new(
-      name: params[:name],
-      email: params[:email],
-      phone: params[:phone],
-      message: params[:message]
-    )
+    @contact = Contact.new(contact_params)
 
     if @contact.save
       redirect_to root_path, notice: '¡Se ha envíado correctamente la información!'
@@ -52,5 +47,11 @@ class WebController < ApplicationController
     else
       redirect_to root_path, notice: 'Hubo un error al subscribirte, intenta más tarde'
     end
+  end
+
+  private
+  # Only allow a list of trusted parameters through.
+  def contact_params
+    params.permit(:name, :email, :phone, :message)
   end
 end

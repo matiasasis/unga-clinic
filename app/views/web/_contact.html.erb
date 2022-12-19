@@ -6,23 +6,23 @@
         <div class="col-md-12">
           <%= form_with(url: '/send-contact-data', method: :post) do |form| %>
             <div class="form-group bmd-form-group">
-              <label for="name" class="bmd-label-floating">Nombre</label>
-              <%= form.text_field :name, autofocus: true, class: 'form-control', placeholder: 'Nombre' %>
+              <!-- <label for="name">Nombre</label> -->
+              <%= form.text_field :name, class: 'form-control', placeholder: 'Nombre' %>
             </div>
             <div class="form-group bmd-form-group">
-              <label for="exampleInputEmails" class="bmd-label-floating">Email</label>
-              <%= form.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control', placeholder: 'Email' %>
+              <!-- <label for="exampleInputEmails">Email</label> -->
+              <%= form.email_field :email, autocomplete: "email", class: 'form-control', placeholder: 'Email' %>
             </div>
             <div class="form-group bmd-form-group">
               <label for="phone" class="bmd-label-floating">Teléfono</label>
-              <%= form.text_field :phone, autofocus: true, class: 'form-control', placeholder: 'Teléfono' %>
+              <%= form.text_field :phone, class: 'form-control' %>
             </div>
             <div class="form-group label-floating bmd-form-group">
               <label class="form-control-label bmd-label-floating" for="message"> Mensaje</label>
-              <%= form.text_area :message, autofocus: true, class: 'form-control', placeholder: 'Mensaje...' %>
+              <%= form.text_area :message, class: 'form-control' %>
             </div>
             <div class="submit text-center">
-              <%= form.submit class: 'btn btn-primary btn-raised btn-round' 'Enviar' %>
+              <%= form.submit 'Enviar', class: 'btn btn-primary btn-raised btn-round' %>
             </div>
           <% end %>
         </div>
