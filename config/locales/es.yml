@@ -33,6 +33,18 @@ es:
         title: Título
         answer: Respuesta
         show: Mostrar
+      contact:
+        name: Nombre
+        phone: Teléfono
+        email: Email
+        message: Mensaje
+      newsletter:
+        email: Email
+      contact:
+        name: Nombre
+        phone: Teléfono
+        email: Email
+        message: Mensaje
       newsletter:
         email: Email
     models:
@@ -60,6 +72,10 @@ es:
         article: Los
         one: Términos y Condiciones
         multiple: Términos y Condiciones
+      contact:
+        article: La
+        one: Página de contacto
+        multiple: Páginas de contacto
       newsletter:
         article: La
         one: Newsletter

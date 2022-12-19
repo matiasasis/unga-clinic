@@ -24,6 +24,16 @@ class WebController < ApplicationController
     @terms_and_cons = TermsAndCon.first_or_create
   end
 
+  def send_contact_data
+    @contact = Contact.new(contact_params)
+
+    if @contact.save
+      redirect_to root_path, notice: '¡Se ha envíado correctamente la información!'
+    else
+      redirect_to root_path, notice: 'Hubo un error al enviar la información, intenta más tarde'
+    end
+  end
+
   def create_newsletter
     if Newsletter.where(email: params[:email]).exists?
       redirect_to root_path, notice: '¡Te has suscrito exitosamente!'
@@ -37,5 +47,11 @@ class WebController < ApplicationController
     else
       redirect_to root_path, notice: 'Hubo un error al subscribirte, intenta más tarde'
     end
+  end
+
+  private
+  # Only allow a list of trusted parameters through.
+  def contact_params
+    params.permit(:name, :email, :phone, :message)
   end
 end
