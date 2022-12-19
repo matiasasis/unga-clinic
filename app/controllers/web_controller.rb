@@ -25,7 +25,7 @@ class WebController < ApplicationController
     if @newsletter.save
       redirect_to root_path, notice: "¡Te has suscrito exitosamente!"
     else
-      # mostrar mensaje de error
+      redirect_to root_path, notice: "Hubo un error al subscribirte, intenta más tarde"
     end
   end
 end
