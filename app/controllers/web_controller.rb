@@ -28,3 +28,4 @@ class WebController < ApplicationController
       # mostrar mensaje de error
     end
   end
+end

@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   resources :professionals, except: [:show]
   resources :users, except: [:show]
   resources :faqs, except: [:show]
+  resources :newsletters
   resources :terms_and_cons, only: %i[index edit update]
   resources :newsletters
   devise_for :users, path: 'auth'
