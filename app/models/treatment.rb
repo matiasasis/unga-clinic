@@ -9,13 +9,13 @@ class Treatment < ApplicationRecord
 
   friendly_id :name, use: :slugged
 
-  validates_uniqueness_of :name
+  validates :name, uniqueness: true
 
   validates :name, :professional_id, :treatment_type_id, presence: true
 
   scope :show, -> { where(show: true) }
 
-  scope :related, -> (limit = 3) { order("RANDOM()").limit(limit) }
+  scope :related, ->(limit = 3) { order('RANDOM()').limit(limit) }
 
   def to_s
     name
@@ -43,6 +43,7 @@ end
 #
 # Indexes
 #
+#  index_treatments_on_name               (name) UNIQUE
 #  index_treatments_on_professional_id    (professional_id)
 #  index_treatments_on_slug               (slug) UNIQUE
 #  index_treatments_on_treatment_type_id  (treatment_type_id)
