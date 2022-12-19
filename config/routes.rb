@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get '/tratamientos', to: 'web#treatments', as: :web_treatments
   get '/preguntas-frecuentes', to: 'web#frequently_asked_questions', as: 'frequently_asked_questions'
   get '/terminos-condiciones', to: 'web#terms_and_conditions', as: 'terms_and_conditions'
+  post '/create-newsletter', to: 'web#create_newsletter'
 
   # BACKOFFICE
   resources :treatments, except: [:show]
@@ -17,8 +18,4 @@ Rails.application.routes.draw do
   resources :terms_and_cons, only: %i[index edit update]
   resources :newsletters
   devise_for :users, path: 'auth'
-
-  get '/preguntas-frecuentes', to: 'web#frequently_asked_questions', as: 'frequently_asked_questions'
-  get '/terminos-condiciones', to: 'web#terms_and_conditions', as: 'terms_and_conditions'
-  post '/create-newsletter', to: 'web#create_newsletter'
 end
