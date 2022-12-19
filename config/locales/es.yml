@@ -31,6 +31,8 @@ es:
         title: Título
         answer: Respuesta
         show: Mostrar
+      newsletter:
+        email: Email
     models:
       user:
         article: El
@@ -56,6 +58,10 @@ es:
         article: Los
         one: Términos y Condiciones
         multiple: Términos y Condiciones
+      newsletter:
+        article: La
+        one: Newsletter
+        multiple: Newsletters
     errors:
       messages:
         record_invalid: "La validación falló: %{errors}"

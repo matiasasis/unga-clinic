@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  resources :newsletters
   root 'web#main'
   resources :treatments, except: [:show]
   resources :treatment_types, except: [:show]
@@ -12,4 +13,5 @@ Rails.application.routes.draw do
 
   get '/preguntas-frecuentes', to: 'web#frequently_asked_questions', as: 'frequently_asked_questions'
   get '/terminos-condiciones', to: 'web#terms_and_conditions', as: 'terms_and_conditions'
+  post '/create-newsletter', to: 'web#create_newsletter'
 end
