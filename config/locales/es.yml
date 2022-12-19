@@ -33,6 +33,18 @@ es:
         title: Título
         answer: Respuesta
         show: Mostrar
+      contact:
+        name: Nombre
+        phone: Teléfono
+        email: Email
+        message: Mensaje
+      newsletter:
+        email: Email
+      contact:
+        name: Nombre
+        phone: Teléfono
+        email: Email
+        message: Mensaje
       newsletter:
         email: Email
     models:
@@ -60,10 +72,24 @@ es:
         article: Los
         one: Términos y Condiciones
         multiple: Términos y Condiciones
+<<<<<<< HEAD
+=======
+      contact:
+        article: La
+        one: Página de contacto
+        multiple: Páginas de contacto
+>>>>>>> 2287e68 (contact page)
       newsletter:
         article: La
         one: Newsletter
         multiple: Newsletters
+<<<<<<< HEAD
+=======
+      contact:
+        article: La
+        one: Página de contacto
+        multiple: Páginas de contacto
+>>>>>>> 2287e68 (contact page)
     errors:
       messages:
         record_invalid: "La validación falló: %{errors}"

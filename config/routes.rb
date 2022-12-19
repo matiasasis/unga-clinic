@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get '/preguntas-frecuentes', to: 'web#frequently_asked_questions', as: 'frequently_asked_questions'
   get '/terminos-condiciones', to: 'web#terms_and_conditions', as: 'terms_and_conditions'
   post '/create-newsletter', to: 'web#create_newsletter'
+  post '/send-contact-data', to: 'web#send_contact_data'
 
   # BACKOFFICE
   resources :treatments, except: [:show]
@@ -17,5 +18,6 @@ Rails.application.routes.draw do
   resources :faqs, except: [:show]
   resources :newsletters, except: [:show]
   resources :terms_and_cons, only: %i[index edit update]
+  resources :contacts, except: [:show]
   devise_for :users, path: 'auth'
 end

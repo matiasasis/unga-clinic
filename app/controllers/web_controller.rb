@@ -24,6 +24,21 @@ class WebController < ApplicationController
     @terms_and_cons = TermsAndCon.first_or_create
   end
 
+  def send_contact_data
+    @contact = Contact.new(
+      name: params[:name],
+      email: params[:email],
+      phone: params[:phone],
+      message: params[:message]
+    )
+
+    if @contact.save
+      redirect_to root_path, notice: '¡Se ha envíado correctamente la información!'
+    else
+      redirect_to root_path, notice: 'Hubo un error al enviar la información, intenta más tarde'
+    end
+  end
+
   def create_newsletter
     if Newsletter.where(email: params[:email]).exists?
       redirect_to root_path, notice: '¡Te has suscrito exitosamente!'
