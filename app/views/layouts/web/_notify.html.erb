@@ -1,0 +1,13 @@
+<% flash.each do |key, value| %>
+  <script>
+    $.notify({
+      icon: "material-icons <%= alert_icon(key) %>",
+      message: "<b><%= alert_title(key) %></b><br /> <%= value %>",
+      class: "alert-with-icon"
+    }, {
+      icon_type: 'class',
+      type: "<%= flash_class(key) %>",
+      delay: '<%= alert_delay(key) %>'
+    });
+  </script>
+<% end %>

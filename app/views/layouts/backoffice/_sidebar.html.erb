@@ -21,6 +21,10 @@
                          icon: 'tim-icons icon-paper',
                          text: t("activerecord.models.terms_and_con.multiple"),
                          menu_active_path: [terms_and_cons_path]) %>
+      <%= menu_item_html(path: newsletters_path,
+                         icon: 'tim-icons icon-email-85',
+                         text: t("activerecord.models.newsletter.multiple"),
+                         menu_active_path: [newsletters_path]) %>
       <%= menu_item_html(path: users_path,
                          icon: 'tim-icons icon-single-02',
                          text: t("activerecord.models.user.multiple"),
