@@ -1,13 +1,21 @@
 # frozen_string_literal: true
 
 class Treatment < ApplicationRecord
+  extend FriendlyId
+
   belongs_to :professional
   belongs_to :treatment_type
   has_many_attached :pictures, dependent: :destroy
 
+  friendly_id :name, use: :slugged
+
+  validates :name, uniqueness: true
+
   validates :name, :professional_id, :treatment_type_id, presence: true
 
   scope :show, -> { where(show: true) }
+
+  scope :related, ->(limit = 3) { order('RANDOM()').limit(limit) }
 
   def to_s
     name
@@ -27,6 +35,7 @@ end
 #  price             :integer
 #  room              :string
 #  show              :boolean          default(FALSE)
+#  slug              :string
 #  created_at        :datetime         not null
 #  updated_at        :datetime         not null
 #  professional_id   :bigint           not null
@@ -34,7 +43,9 @@ end
 #
 # Indexes
 #
+#  index_treatments_on_name               (name) UNIQUE
 #  index_treatments_on_professional_id    (professional_id)
+#  index_treatments_on_slug               (slug) UNIQUE
 #  index_treatments_on_treatment_type_id  (treatment_type_id)
 #
 # Foreign Keys

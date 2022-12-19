@@ -8,6 +8,7 @@ ruby '3.1.1'
 gem 'aws-sdk-s3', require: false
 gem 'bootsnap', require: false
 gem 'devise'
+gem 'friendly_id', '~> 5.4.0'
 gem 'image_processing', '~> 1.12', '>= 1.12.2'
 gem 'paranoia', '~> 2.6.1'
 gem 'pg', '~> 1.1'

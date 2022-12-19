@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   # PUBLIC PAGES
   root 'web#main'
   get '/tratamientos', to: 'web#treatments', as: :web_treatments
+  get '/tratamientos/:treatment_slug', to: 'web#treatment', as: :web_treatment
   get '/preguntas-frecuentes', to: 'web#frequently_asked_questions', as: 'frequently_asked_questions'
   get '/terminos-condiciones', to: 'web#terms_and_conditions', as: 'terms_and_conditions'
 

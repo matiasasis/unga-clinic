@@ -1,0 +1,10 @@
+<div class="related-products">
+  <h3 class="title text-center mb-4">También te podría interesar:</h3>
+  <div class="row">
+    <% related_treatments.each do |treatment| %>
+      <div class="col-lg-4 col-md-6 text-center">
+        <%= render 'web/treatments/treatment_card', treatment: treatment %>
+      </div>
+    <% end %>
+  </div>
+</div>

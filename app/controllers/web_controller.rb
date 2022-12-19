@@ -11,6 +11,11 @@ class WebController < ApplicationController
     @treatments = Treatment.show
   end
 
+  def treatment
+    @treatment = Treatment.friendly.find(params[:treatment_slug])
+    @related_treatments = Treatment.related
+  end
+
   def frequently_asked_questions
     @faqs = Faq.show
   end

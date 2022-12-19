@@ -109,6 +109,8 @@ GEM
       railties (>= 3.2)
     erubi (1.11.0)
     ffi (1.15.5)
+    friendly_id (5.4.2)
+      activerecord (>= 4.0.0)
     globalid (1.0.0)
       activesupport (>= 5.0)
     hirb (0.7.3)
@@ -261,6 +263,7 @@ DEPENDENCIES
   debug
   devise
   dotenv-rails
+  friendly_id (~> 5.4.0)
   hirb
   image_processing (~> 1.12, >= 1.12.2)
   paranoia (~> 2.6.1)

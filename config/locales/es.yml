@@ -28,6 +28,7 @@ es:
         room: Consultorio
         pictures: Imágenes
         show: Mostrar
+        slug: Link
       faq:
         title: Título
         answer: Respuesta

@@ -1,27 +1,26 @@
 <div class="treatment card card-blog">
   <div class="card-header card-header-image">
-    <a href="#pablo">
+    <a href="<%= web_treatment_path(treatment) %>">
       <%= image_tag treatment.pictures.first, class: 'avatar img-raised' %>
     </a>
   </div>
   <div class="card-body ">
     <h6 class="card-category"><%= treatment.treatment_type.name %></h6>
     <h4 class="card-title">
-      <a href="#"><%= treatment.name %></a>
+      <a href="<%= web_treatment_path(treatment) %>"><%= treatment.name %></a>
     </h4>
     <p class="card-description">
       <%= treatment.description %>
     </p>
   </div>
   <div class="card-footer ">
-    <div class="author">
-      <a href="#pablo">
-        <%= image_tag 'doctor-icon.png', class: 'avatar img-raised' %>
-        <span><%= treatment.professional.to_s %></span>
-      </a>
+    <div class="stats">
+      <i class="material-icons">face</i>
+      <span class="ml-1"><%= treatment.professional.to_s %></span>
     </div>
     <div class="stats ml-auto">
-      <i class="material-icons">schedule</i> <%= treatment.duration_min %> min
+      <i class="material-icons">schedule</i>
+      <span class="ml-1"><%= treatment.duration_min %> min</span>
     </div>
   </div>
 </div>
