@@ -3,3 +3,4 @@
 //= require web/vendor/bootstrap-material-design.min
 //= require web/vendor/moment.min
 //= require web/vendor/material-kit.min
+//= require web/vendor/bootstrap-notify
