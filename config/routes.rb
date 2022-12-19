@@ -17,5 +17,10 @@ Rails.application.routes.draw do
   resources :faqs, except: [:show]
   resources :newsletters
   resources :terms_and_cons, only: %i[index edit update]
+  resources :newsletters
   devise_for :users, path: 'auth'
+
+  get '/preguntas-frecuentes', to: 'web#frequently_asked_questions', as: 'frequently_asked_questions'
+  get '/terminos-condiciones', to: 'web#terms_and_conditions', as: 'terms_and_conditions'
+  post '/create-newsletter', to: 'web#create_newsletter'
 end
