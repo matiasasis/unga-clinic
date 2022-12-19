@@ -18,5 +18,10 @@
     .page-header {
       background-position: center;
     }
+    .stats {
+      span {
+        vertical-align: super;
+      }
+    }
   }
 }

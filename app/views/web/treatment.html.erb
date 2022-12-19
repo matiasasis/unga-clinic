@@ -12,9 +12,19 @@
             <h2 class="title"><%= @treatment.name %></h2>
             <div class="description mt-4">
               <p><%= @treatment.description %></p>
+              <div>
+                <div class="stats">
+                  <i class="material-icons">face</i>
+                  <span class="ml-1"><%= @treatment.professional.to_s %></span>
+                </div>
+                <div class="stats ml-auto">
+                  <i class="material-icons">schedule</i>
+                  <span class="ml-1"><%= @treatment.duration_min %> min</span>
+                </div>
+              </div>
             </div>
             <div class="row pull-right mt-4">
-              <a href="" class="btn btn-primary btn-round btn-block">
+              <a href="<%= book_wa_link(@treatment) %>" class="btn btn-primary btn-round btn-block" target="_blank">
                 <i class="material-icons">perm_phone_msg</i> Reservar tratamiento
               </a>
             </div>
@@ -22,7 +32,7 @@
         </div>
       </div>
       <%= render 'web/treatments/treatment_features' %>
-      <%= render 'web/treatments/related_treatments' %>
+      <%= render 'web/treatments/related_treatments', related_treatments: @related_treatments %>
     </div>
   </div>
 </div>

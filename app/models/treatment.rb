@@ -15,6 +15,8 @@ class Treatment < ApplicationRecord
 
   scope :show, -> { where(show: true) }
 
+  scope :related, -> (limit = 3) { order("RANDOM()").limit(limit) }
+
   def to_s
     name
   end

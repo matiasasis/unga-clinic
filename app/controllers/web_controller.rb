@@ -13,6 +13,7 @@ class WebController < ApplicationController
 
   def treatment
     @treatment = Treatment.friendly.find(params[:treatment_slug])
+    @related_treatments = Treatment.related
   end
 
   def frequently_asked_questions
