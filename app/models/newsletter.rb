@@ -1,4 +1,9 @@
+# frozen_string_literal: true
 class Newsletter < ApplicationRecord
+
+    def to_s
+        email
+    end
 end
 
 # == Schema Information
