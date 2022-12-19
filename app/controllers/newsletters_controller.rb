@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class NewslettersController < BackofficeController
-  before_action :set_newsletter, only: %i[ show edit update destroy ]
+  before_action :set_newsletter, only: %i[edit update destroy]
 
   # GET /newsletters
   def index
@@ -12,8 +14,7 @@ class NewslettersController < BackofficeController
   end
 
   # GET /newsletters/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /newsletters
   def create
@@ -42,13 +43,14 @@ class NewslettersController < BackofficeController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_newsletter
-      @newsletter = Newsletter.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def newsletter_params
-      params.require(:newsletter).permit(:email)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_newsletter
+    @newsletter = Newsletter.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def newsletter_params
+    params.require(:newsletter).permit(:email)
+  end
 end

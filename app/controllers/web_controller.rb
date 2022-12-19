@@ -25,12 +25,17 @@ class WebController < ApplicationController
   end
 
   def create_newsletter
+    if Newsletter.where(email: params[:email]).exists?
+      redirect_to root_path, notice: '¡Te has suscrito exitosamente!'
+      return
+    end
+
     @newsletter = Newsletter.new(email: params[:email])
 
     if @newsletter.save
-      redirect_to root_path, notice: "¡Te has suscrito exitosamente!"
+      redirect_to root_path, notice: '¡Te has suscrito exitosamente!'
     else
-      redirect_to root_path, notice: "Hubo un error al subscribirte, intenta más tarde"
+      redirect_to root_path, notice: 'Hubo un error al subscribirte, intenta más tarde'
     end
   end
 end
